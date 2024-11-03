@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            // Call function to display products if fetch is successful
+    
             displayProducts(data);
-        })
+        }).catch(error => {
+            // Task 4: Handle Errors 
+            errorMessage.textContent = 'Failed to load products. Please try again at a later time.';
+            console.error('Fetch error:', error);
+        });
+});
